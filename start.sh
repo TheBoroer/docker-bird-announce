@@ -5,6 +5,7 @@
 #  
 #fi
 
+rm -rf /etc/bird/bird6.conf
 yes | cp -rf /etc/bird/bird6.template.conf /etc/bird/bird6.conf
 
 # Setup IPv6 Bird
