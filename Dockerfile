@@ -1,10 +1,12 @@
 FROM ubuntu:xenial
 MAINTAINER Boro <docker@bo.ro>
 
-RUN apt-get install software-properties-common
+RUN apt-get update
+RUN apt-get install -y software-properties-common
+
 RUN add-apt-repository -y ppa:cz.nic-labs/bird
-RUN apt-get update -y
-RUN apt-get install bird -y
+RUN apt-get update
+RUN apt-get install y bird
 
 # Make a backup of the default config files
 RUN cp /etc/bird/bird.conf /etc/bird/bird.default.conf
