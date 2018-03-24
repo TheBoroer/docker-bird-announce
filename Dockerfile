@@ -16,7 +16,10 @@ RUN export LANG=en_US.UTF-8
 RUN add-apt-repository -y ppa:cz.nic-labs/bird
 RUN apt-get update
 RUN apt-get install -y bird
-RUN mkdir /run/bird
+
+RUN mkdir /run/bird && chmod 777 /run/bird
+RUN touch /run/bird/bird.ctl
+RUN touch /run/bird/bird6.ctl
 
 # Make a backup of the default config files
 RUN cp /etc/bird/bird.conf /etc/bird/bird.default.conf
