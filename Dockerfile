@@ -1,9 +1,9 @@
 FROM ubuntu:xenial
 MAINTAINER Boro <docker@bo.ro>
 
-RUN add-apt-repository ppa:cz.nic-labs/bird
-RUN apt-get update
-RUN apt-get install bird
+RUN add-apt-repository ppa:cz.nic-labs/bird -y
+RUN apt-get update -y
+RUN apt-get install bird -y
 
 # Make a backup of the default config files
 RUN cp /etc/bird/bird.conf /etc/bird/bird.default.conf
