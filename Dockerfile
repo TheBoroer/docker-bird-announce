@@ -13,8 +13,8 @@ ENV LC_ALL en_US.UTF-8
 RUN locale-gen en_US.UTF-8
 RUN export LANG=en_US.UTF-8
 
-
-
+RUN touch /run/bird/bird.ctl
+RUN touch /run/bird/bird6.ctl
 
 RUN add-apt-repository -y ppa:cz.nic-labs/bird
 RUN apt-get update

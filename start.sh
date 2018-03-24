@@ -15,4 +15,4 @@ sed -i "s~_____ANNOUNCE_IPV6_____~$ANNOUNCE_IPV6~g" /etc/bird/bird6.conf
 sed -i "s~_____PEER_ASN_____~$PEER_ASN~g" /etc/bird/bird6.conf
 sed -i "s~_____PEER_IPV6_____~$PEER_IPV6~g" /etc/bird/bird6.conf
 
-/usr/sbin/bird6 -f -u bird -g bird
+/usr/sbin/bird6 -f -u root -g root
