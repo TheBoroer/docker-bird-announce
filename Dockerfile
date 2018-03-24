@@ -18,7 +18,7 @@ RUN export LANG=en_US.UTF-8
 
 RUN add-apt-repository -y ppa:cz.nic-labs/bird
 RUN apt-get update
-RUN apt-get install y bird
+RUN apt-get install -y bird
 
 # Make a backup of the default config files
 RUN cp /etc/bird/bird.conf /etc/bird/bird.default.conf
