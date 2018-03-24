@@ -1,7 +1,8 @@
 FROM ubuntu:xenial
 MAINTAINER Boro <docker@bo.ro>
 
-RUN add-apt-repository ppa:cz.nic-labs/bird -y
+RUN apt-get install software-properties-common
+RUN add-apt-repository -y ppa:cz.nic-labs/bird
 RUN apt-get update -y
 RUN apt-get install bird -y
 
