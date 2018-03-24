@@ -24,8 +24,8 @@ RUN apt-get install -y bird
 RUN cp /etc/bird/bird.conf /etc/bird/bird.default.conf
 RUN cp /etc/bird/bird6.conf /etc/bird/bird6.default.conf
 
-ADD bird.conf /etc/bird/bird.template.conf
-ADD bird6.conf /etc/bird/bird6.template.conf
+ADD bird.template.conf /etc/bird/bird.template.conf
+ADD bird6.template.conf /etc/bird/bird6.template.conf
 
 ADD start.sh /start.sh
 RUN chmod 755 /start.sh
