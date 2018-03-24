@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 MAINTAINER Boro <docker@bo.ro>
 
 RUN apt-get update
-RUN apt-get install -y software-properties-common locale-gen
+RUN apt-get install -y software-properties-common locales
 
 # Set locale
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
