@@ -21,3 +21,14 @@ All of these variables are required to start
 | ANNOUNCE_IPV6 | Your IPv6 block you want to announce  | `2f01:a8f1:1200::/44` |
 | PEER_ASN | Your Peering Partner's AS Number | `222222` |
 | PEER_IPV6 | Your Peering Partner's BGP Router IPv6 address |  `2001:a50:9f01c:a288::1` |
+
+## Useful commands to run inside the container
+
+Show Routes announces via BGP: 
+- `birdc6 show route`
+
+Show BGP Status for only the bgp announced (ba) block:
+- `birdc6 show proto ba`
+
+Show BGP Status for everything:
+- `birdc6 show proto all`
