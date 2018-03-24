@@ -32,3 +32,7 @@ Show BGP Status for only the bgp announced (ba) block:
 
 Show BGP Status for everything:
 - `birdc6 show proto all`
+
+# Contribute
+
+Pull Requests are always welcome. Let's connect!
