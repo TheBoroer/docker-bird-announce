@@ -1,6 +1,9 @@
 FROM ubuntu:xenial
 MAINTAINER Boro <docker@bo.ro>
 
+RUN sudo locale-gen en_US.UTF-8
+RUN export LANG=en_US.UTF-8
+
 RUN apt-get update
 RUN apt-get install -y software-properties-common
 
