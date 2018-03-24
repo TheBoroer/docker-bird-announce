@@ -24,7 +24,7 @@ All of these variables are required to start
 
 # Useful commands to run inside the container
 
-Show Routes announces via BGP: 
+Show Routes announced via BGP:
 - `birdc6 show route`
 
 Show BGP Status for only the bgp announced (ba) block:
