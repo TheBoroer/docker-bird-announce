@@ -1,15 +1,15 @@
-# Dockerized BIRD Internet Routing Daemon
+## Dockerized BIRD Internet Routing Daemon
 
 More information on BIRD: http://bird.network.cz
 
 This container is for setting up quick and easy BIRD container to BGP announce an IPv6 Block.
 It's configured via the environment variables below.
 
-## Requirements to run Container
+# Requirements to run Container
 - Run in Priviledged mode
 - Network mode: Host
 
-## Environment Variables
+# Environment Variables
 
 All of these variables are required to start 
 
@@ -22,7 +22,7 @@ All of these variables are required to start
 | PEER_ASN | Your Peering Partner's AS Number | `222222` |
 | PEER_IPV6 | Your Peering Partner's BGP Router IPv6 address |  `2001:a50:9f01c:a288::1` |
 
-## Useful commands to run inside the container
+# Useful commands to run inside the container
 
 Show Routes announces via BGP: 
 - `birdc6 show route`
