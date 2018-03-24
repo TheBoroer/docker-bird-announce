@@ -1,11 +1,11 @@
-## Dockerized BIRD Internet Routing Daemon
+# Dockerized BIRD Internet Routing Daemon
 
 More information on BIRD: http://bird.network.cz
 
 This container is for setting up quick and easy BIRD container to BGP announce an IPv6 Block.
 It's configured via the environment variables below.
 
-# Requirements to run Container
+## Requirements to run Container
 - Run in Priviledged mode
 - Network mode: Host
 
