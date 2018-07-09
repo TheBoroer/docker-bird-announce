@@ -13,6 +13,10 @@ if [ ! -z "$CONFIG_BIRD" ]; then
   sed -i "s~_____ANNOUNCE_IPV4_____~$ANNOUNCE_IPV4~g" /etc/bird/bird.conf
   sed -i "s~_____PEER_ASN_____~$PEER_ASN~g" /etc/bird/bird.conf
   sed -i "s~_____PEER_IPV4_____~$PEER_IPV4~g" /etc/bird/bird.conf
+  
+  if [ ! -z "$BGP_PASSWORD" ]; then
+    echo >> "password $BGP_PASSWORD;"
+  fi
 fi
 
 if [ ! -z "$CONFIG_BIRD6" ]; then
@@ -28,6 +32,10 @@ if [ ! -z "$CONFIG_BIRD6" ]; then
   sed -i "s~_____ANNOUNCE_IPV6_____~$ANNOUNCE_IPV6~g" /etc/bird/bird6.conf
   sed -i "s~_____PEER_ASN_____~$PEER_ASN~g" /etc/bird/bird6.conf
   sed -i "s~_____PEER_IPV6_____~$PEER_IPV6~g" /etc/bird/bird6.conf
+  
+  if [ ! -z "$BGP_PASSWORD" ]; then
+    echo >> "password $BGP_PASSWORD;"
+  fi
 fi
 
 
