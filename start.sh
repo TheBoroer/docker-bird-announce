@@ -31,16 +31,16 @@ if [ ! -z "$CONFIG_BIRD6" ]; then
 fi
 
 
-if [ ! -z $ENABLE_BIRD ] && [ ! -z $ENABLE_BIRD6 ]; then
+if [ ! -z "$ENABLE_BIRD" ] && [ ! -z "$ENABLE_BIRD6" ]; then
   # BIRD v4 and v6
   /usr/sbin/bird6 -u root -g root
   /usr/sbin/bird -f -u root -g root
   
-elif [ ! -z $ENABLE_BIRD ]; then
+elif [ ! -z "$ENABLE_BIRD" ]; then
   # BIRD v4 only
   /usr/sbin/bird -f -u root -g root
   
-elif [ ! -z $ENABLE_BIRD6 ]; then
+elif [ ! -z "$ENABLE_BIRD6" ]; then
   # BIRD v6 only
   /usr/sbin/bird6 -f -u root -g root
   
