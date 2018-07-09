@@ -16,7 +16,7 @@ All of these variables are required to start
 | Environment Variable | Description | Example Value |
 |----------------------|-------------|---------------|
 | ROUTER_ID | Change this into your BIRD router ID. It's a world-wide unique identification # of this router/server, usually one of public IPv4 addresses. | `1.1.1.1` |
-| ROUTER_ASN | Your AS Number | `111111` |
+| BGP_PASSWORD | Your BGP Session Password | `secretpassword` |
 | PEER_ASN | Your Peering Partner's AS Number | `222222` |
 | ENABLE_BIRD | Enable the BIRD IPv4 Daemon | `true` |
 | CONFIG_BIRD | Generate BIRD config on boot using the ENV Vars (**NOTE:** this will overwrite any volume mounted config file) | `true` |
