@@ -11,12 +11,13 @@ It's configured via the environment variables below.
 
 # Environment Variables
 
-All of these variables are required to start 
+All of these variables are required to start
 
 | Environment Variable | Description | Example Value |
 |----------------------|-------------|---------------|
-| ROUTER_ID | Change this into your BIRD router ID. It's a world-wide unique identification # of this router/server, usually one of public IPv4 addresses. | `1.1.1.1` |
-| BGP_PASSWORD | Your BGP Session Password | `secretpassword` |
+| ROUTER_ID | Change this into your BIRD router ID. It's a world-wide unique identification # of this router/server, usually one of public IPv4 addresses. | `123.123.123.1` |
+| PASSWORD | Your BGP Session Password | `secretpassword` |
+| MULTIHOP | Number of muliihop sessions | `2` |
 | PEER_ASN | Your Peering Partner's AS Number | `222222` |
 | ENABLE_BIRD | Enable the BIRD IPv4 Daemon | `true` |
 | CONFIG_BIRD | Generate BIRD config on boot using the ENV Vars (**NOTE:** this will overwrite any volume mounted config file) | `true` |
@@ -32,12 +33,15 @@ All of these variables are required to start
 # Useful commands to run inside the container
 
 Show Routes announced via BGP:
+- `birdc show route`
 - `birdc6 show route`
 
 Show BGP Status for only the bgp announced (ba) block:
+- `birdc show proto ba`
 - `birdc6 show proto ba`
 
 Show BGP Status for everything:
+- `birdc show proto all`
 - `birdc6 show proto all`
 
 # Contribute
