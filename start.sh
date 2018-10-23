@@ -7,15 +7,16 @@ if [ ! -z "$CONFIG_BIRD" ]; then
   yes | cp -rf /etc/bird/bird.template.conf /etc/bird/bird.conf
   
   sed -i "s~_____ROUTER_ID_____~$ROUTER_ID~g" /etc/bird/bird.conf
-  sed -i "s~_____BGP_PASSWORD_____~$BGP_PASSWORD~g" /etc/bird/bird.conf
+  sed -i "s~_____PASSWORD_____~$PASSWORD~g" /etc/bird/bird.conf
+  sed -i "s~_____MULTIHOP_____~$MULTIHOP~g" /etc/bird/bird.conf
   sed -i "s~_____ROUTER_ASN_____~$ROUTER_ASN~g" /etc/bird/bird.conf
   sed -i "s~_____ROUTER_IPV4_____~$ROUTER_IPV4~g" /etc/bird/bird.conf
   sed -i "s~_____ANNOUNCE_IPV4_____~$ANNOUNCE_IPV4~g" /etc/bird/bird.conf
   sed -i "s~_____PEER_ASN_____~$PEER_ASN~g" /etc/bird/bird.conf
   sed -i "s~_____PEER_IPV4_____~$PEER_IPV4~g" /etc/bird/bird.conf
   
-  if [ ! -z "$BGP_PASSWORD" ]; then
-    echo >> "password $BGP_PASSWORD;"
+  if [ ! -z "$PASSWORD" ]; then
+    echo >> "password $PASSWORD;"
   fi
 fi
 
@@ -26,15 +27,16 @@ if [ ! -z "$CONFIG_BIRD6" ]; then
   yes | cp -rf /etc/bird/bird6.template.conf /etc/bird/bird6.conf
   
   sed -i "s~_____ROUTER_ID_____~$ROUTER_ID~g" /etc/bird/bird6.conf
-  sed -i "s~_____BGP_PASSWORD_____~$BGP_PASSWORD~g" /etc/bird/bird6.conf
+  sed -i "s~_____PASSWORD_____~$PASSWORD~g" /etc/bird/bird6.conf
+  sed -i "s~_____MULTIHOP_____~$MULTIHOP~g" /etc/bird/bird6.conf
   sed -i "s~_____ROUTER_ASN_____~$ROUTER_ASN~g" /etc/bird/bird6.conf
   sed -i "s~_____ROUTER_IPV6_____~$ROUTER_IPV6~g" /etc/bird/bird6.conf
   sed -i "s~_____ANNOUNCE_IPV6_____~$ANNOUNCE_IPV6~g" /etc/bird/bird6.conf
   sed -i "s~_____PEER_ASN_____~$PEER_ASN~g" /etc/bird/bird6.conf
   sed -i "s~_____PEER_IPV6_____~$PEER_IPV6~g" /etc/bird/bird6.conf
   
-  if [ ! -z "$BGP_PASSWORD" ]; then
-    echo >> "password $BGP_PASSWORD;"
+  if [ ! -z "$PASSWORD" ]; then
+    echo >> "password $PASSWORD;"
   fi
 fi
 
