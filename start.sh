@@ -11,18 +11,23 @@ if [ ! -z "$CONFIG_BIRD" ]; then
     sed -i '/# _____ROUTES_PLACEHOLDER_____/a \ \ \ \ route '"$IP"' via '"$ROUTER_IPV4"';' /etc/bird/bird.conf
   done
 
+  # Required Vars
   sed -i "s~_____ROUTER_ID_____~$ROUTER_ID~g" /etc/bird/bird.conf
-  sed -i "s~_____PASSWORD_____~$PASSWORD~g" /etc/bird/bird.conf
-  sed -i "s~_____MULTIHOP_____~$MULTIHOP~g" /etc/bird/bird.conf
   sed -i "s~_____ROUTER_ASN_____~$ROUTER_ASN~g" /etc/bird/bird.conf
   sed -i "s~_____ROUTER_IPV4_____~$ROUTER_IPV4~g" /etc/bird/bird.conf
   sed -i "s~_____ANNOUNCE_IPV4_____~$ANNOUNCE_IPV4~g" /etc/bird/bird.conf
   sed -i "s~_____PEER_ASN_____~$PEER_ASN~g" /etc/bird/bird.conf
   sed -i "s~_____PEER_IPV4_____~$PEER_IPV4~g" /etc/bird/bird.conf
-
+  
+  # Optional Vars
   if [ ! -z "$PASSWORD" ]; then
-    echo >> "password $PASSWORD;"
+    sed -i "s~#_____PASSWORD_____~password \"$PASSWORD\";~g" /etc/bird/bird.conf
   fi
+  
+  if [ ! -z "$MULTIHOP" ]; then
+    sed -i "s~#_____MULTIHOP_____~multihop $MULTIHOP;~g" /etc/bird/bird.conf
+  fi
+  
 fi
 
 if [ ! -z "$CONFIG_BIRD6" ]; then
@@ -36,18 +41,23 @@ if [ ! -z "$CONFIG_BIRD6" ]; then
     sed -i '/# _____ROUTES_PLACEHOLDER_____/a \ \ \ \ route '"$IP"' via '"$ROUTER_IPV6"';' /etc/bird/bird.conf
   done
 
+  # Required Vars
   sed -i "s~_____ROUTER_ID_____~$ROUTER_ID~g" /etc/bird/bird6.conf
-  sed -i "s~_____PASSWORD_____~$PASSWORD~g" /etc/bird/bird6.conf
-  sed -i "s~_____MULTIHOP_____~$MULTIHOP~g" /etc/bird/bird6.conf
   sed -i "s~_____ROUTER_ASN_____~$ROUTER_ASN~g" /etc/bird/bird6.conf
   sed -i "s~_____ROUTER_IPV6_____~$ROUTER_IPV6~g" /etc/bird/bird6.conf
   sed -i "s~_____ANNOUNCE_IPV6_____~$ANNOUNCE_IPV6~g" /etc/bird/bird6.conf
   sed -i "s~_____PEER_ASN_____~$PEER_ASN~g" /etc/bird/bird6.conf
   sed -i "s~_____PEER_IPV6_____~$PEER_IPV6~g" /etc/bird/bird6.conf
 
+  # Optional Vars
   if [ ! -z "$PASSWORD" ]; then
-    echo >> "password $PASSWORD;"
+    sed -i "s~#_____PASSWORD_____~password \"$PASSWORD\";~g" /etc/bird/bird6.conf
   fi
+  
+  if [ ! -z "$MULTIHOP" ]; then
+    sed -i "s~#_____MULTIHOP_____~multihop $MULTIHOP;~g" /etc/bird/bird6.conf
+  fi
+
 fi
 
 
